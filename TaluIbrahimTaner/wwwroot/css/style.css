@@ -13399,16 +13399,20 @@ a {
 
 .testimonial-item {
     text-align: center;
+    width: 600px !important;
 }
 
     .testimonial-item .testimonial-item-inner {
-        padding: 50px 30px;
         background: #fff;
         border-radius: 10px;
         -webkit-transition: .3s all ease;
         -o-transition: .3s all ease;
         transition: .3s all ease;
     }
+        .testimonial-item .testimonial-item-inner img {
+            width: 300px !important;
+            height: 300px !important;
+        }
 
     .testimonial-item .testimonial-heading {
         font-size: 18px;
@@ -14153,3 +14157,8 @@ a {
         height: 1px;
         background: #d3d8dc;
     }
+
+.card-img-top {
+    width:420px;
+    height:300px;
+}
