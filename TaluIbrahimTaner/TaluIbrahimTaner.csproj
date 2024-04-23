@@ -10,12 +10,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\Mimari\Proje6\" />
-    <Folder Include="wwwroot\images\Mimari\Proje5\" />
-    <Folder Include="wwwroot\images\Mimari\Proje4\" />
-    <Folder Include="wwwroot\images\Mimari\Proje3\" />
-    <Folder Include="wwwroot\images\Mimari\Proje2\" />
-  </ItemGroup>
-
 </Project>

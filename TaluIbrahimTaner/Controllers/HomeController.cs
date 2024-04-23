@@ -65,6 +65,10 @@ namespace TaluIbrahimTaner.Controllers
         {
             return View();
         }
+        public IActionResult Sulusepken()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
