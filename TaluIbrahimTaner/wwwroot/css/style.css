@@ -13029,7 +13029,7 @@ html, body {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #7a7a7a;
@@ -13037,7 +13037,7 @@ body {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .logo {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
@@ -13936,7 +13936,7 @@ a {
     .single-portfolio img {
         width: 500px !important;
         height: 250px !important;
-        background-size:cover;
+        background-size: cover;
     }
 
     .single-portfolio > a {
@@ -14159,9 +14159,54 @@ a {
     object-fit: cover;
     border-radius: 10px;
 }
+
 .project-explanation {
     text-align: justify;
 }
+
 .carousel-item {
     transition: transform 0.6s ease;
 }
+
+.sosyal {
+    transition: color 0.3s ease; /* Renk deðiþimini yumuþak bir þekilde gerçekleþtirmek için geçiþ efekti tanýmlama */
+}
+
+    .sosyal:hover {
+        color: #fc5404; /* Ýkona fareyi getirdiðinde renk griye dönüþecek */
+    }
+
+.site-nav .site-navigation .site-menu > li.active > a:hover {
+    color: #fc5404; /* Anasayfa baðlantýsýna hover olduðunda metin rengi deðiþecek */
+}
+
+.site-nav .site-navigation .site-menu > li.has-children:hover > a {
+    color: #fc5404; /* Ýçerikler menüsüne hover olduðunda metin rengi turuncu olacak */
+}
+
+.logo:hover {
+    color: #fc5404 !important; /* Logoya hover olduðunda metin rengi #fc5404 (turuncu) olacak */
+}
+.scroll-to-bottom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.arrow-down {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+    .arrow-down:hover {
+        border-color: #fc5404; /* Turuncu renk */
+    }
