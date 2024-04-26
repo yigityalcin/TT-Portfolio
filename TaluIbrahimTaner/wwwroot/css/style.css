@@ -13931,7 +13931,13 @@ a {
     border-radius: 5px;
     overflow: hidden;
     color: #fff;
+    transition: transform 0.3s ease;
 }
+
+    .single-portfolio:hover {
+        transform: scale(1.05);
+    }
+
 
     .single-portfolio img {
         width: 500px !important;
