@@ -145,8 +145,6 @@
 	tinyslier();
 
 	
-	var lightboxVideo = GLightbox({
-		selector: '.glightbox'
-	});
+	
 
 })()
