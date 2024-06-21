@@ -14,7 +14,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+// Static file middleware with caching options
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        // Cache static files for 30 days
+        ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=2592000");
+    }
+});
 
 app.UseRouting();
 
