@@ -1,4 +1,17 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+/**
+   * Preloader
+   */
+const preloader = document.querySelector('#preloader');
+if (preloader) {
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('loaded');
+        }, 1000);
+        setTimeout(() => {
+            preloader.remove();
+            document.getElementById('content').style.display = 'block';
+        }, 2000);
+    });
+}
 
-// Write your JavaScript code.
