@@ -13135,11 +13135,10 @@ a {
                 /*text-align:justify;*/
             }
 .deklarasyon {
-    font-family: 'Georgia', 'Times New Roman', 'Serif', 'Leelawadee UI', 'Arial', 'Courier New', 'Trebuchet MS' !important;
+    font-family: 'Playfair Display', serif !important;
     font-size: 40px;
     color: #fff !important;
     text-transform: uppercase;
-    font-weight: bold !important;
     text-align: justify;
     font-style: italic;
 }
