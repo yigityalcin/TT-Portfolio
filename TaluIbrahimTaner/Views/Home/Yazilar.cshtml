@@ -1,71 +1,154 @@
 ﻿@{
-    ViewData["Title"] = "Single";
+    ViewData["Title"] = "Poetry Site";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-    body {
-        background-color: #f8f9fa;
-        padding-top: 20px;
-    }
-
-    .post {
-        background-color: #fff;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-        .post h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .post p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .post .meta {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .post .read-more {
-            color: #000;
-            font-weight: bold;
-        }
-</style>
-<body class="bg-black mt-5">
-
-    <div class="container mt-5">
-
-        <!-- Post 1 -->
-        <div class="post">
-            <h2>Sample Post Title 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac mauris ut mi vestibulum dictum eget sed libero. In ac nulla id turpis commodo varius. Donec ac purus vel tellus ultrices posuere.</p>
-            <div class="meta">Posted on January 1, 2023</div>
-            <a href="#" class="read-more">Read more</a>
+<body>
+    <div class="hero-2 overlay" style="background-image: url('/images/Fotografi/Sergi/23.webp');">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 mx-auto text-center">
+                    <h1 class="mimari-projelerim d-flex justify-content-center mb-5">
+                        <span>YAZILARIM</span>
+                    </h1>
+                    <a href="#bottom" class="scroll-to-bottom">
+                        <span class="arrow-down"></span>
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="section sec-5">
+        <div class="container">         
+            <div id="bottom"></div>
+            <div class="row g-4">
+                <!-- Cümleler -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence1Modal">Bir bedenin gerçeği miydi o?</a>
+                    </div>
+                </div>
 
-        <!-- Post 2 -->
-        <div class="post">
-            <h2>Sample Post Title 2</h2>
-            <p>Sed pulvinar, est nec gravida consectetur, purus libero consectetur justo, id semper felis ligula nec turpis. Fusce tincidunt quam vitae mi facilisis, ac feugiat odio sollicitudin.</p>
-            <div class="meta">Posted on February 15, 2023</div>
-            <a href="#" class="read-more">Read more</a>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence2Modal">Yalnızlıkta buluyorum içimdeki kaosu...</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence3Modal">İndirme yelkenleri,...</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence4Modal">Uzaktan bar aşkı...</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence5Modal">Var olduğuna bir türlü ikna olamadığı cama vura vura, kuşa dönüşmüştü sinek... Hem de bir yaz akşamında...</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence6Modal">ADSIZ...</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence7Modal">BOTANİK HİSLER-3...</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="single-sentence">
+                        <a href="#" data-toggle="modal" data-target="#sentence8Modal">BİR BAR TUVALETİNDE YAZIYORUM BUNU...</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Post 3 -->
-        <div class="post">
-            <h2>Sample Post Title 3</h2>
-            <p>Aliquam erat volutpat. Morbi laoreet, nisl at congue ultrices, nisi justo maximus magna, sed interdum odio quam a enim.</p>
-            <div class="meta">Posted on March 20, 2023</div>
-            <a href="#" class="read-more">Read more</a>
-        </div>
-
     </div>
 
+    <!-- Modals -->
+    <div class="modal fade" id="sentence1Modal" tabindex="-1" role="dialog" aria-labelledby="sentence1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sentence1ModalLabel">Bir bedenin gerçeği miydi o?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Bir bedenin gerçeği miydi o?
+                        Hiç
+                        Ama hiç ıslatmayan o yağmurda,
+                        Bir bedenin gerçekliğiyle baş başa kaldığın o anda,
+                        Ve aslında hiç bilmediğin bir kadına sarıldığında,
+                        Kapılar,
+                        Hiçbir zaman kapanamadığında,
+                        Sırılsıklam bir halde eşiğe gömülmesiydi bir bedenin salt gerçekliği.
+
+                        Kapanamayan o kapıların aralığından,
+                        Bir bakış
+                        Ve anahtar deliğinden sızan,
+                        Bir koku tanesi kaçamağı...
+                        Suyun akışı
+                        İnce,
+                        Duru,
+                        Dipdiri...
+
+                        Yeşilini unutmuş bir tabiat ana kopyası,
+                        Öpüşmelerin en taraflı yanlısı...
+                        Ada olmayı çok özlemiş, körpe, bej renklerle sevişen
+                        Bir yarımada sevdası.
+                        Otobüs duraklarının arkadaşsız kaldığı bu yerde,
+                        Ucuz asfalt kokularına bağımlı olmuş,
+                        Bütün binek araç sahipleri...
+                        Ve tam bunların arasında
+                        Bir türlü denk gelemememizin mistik girdabı.
+                        İşte tam da bu yüzden,
+                        Hiç tanımadığın bir kadına sarıldığında, bej renklerin söylediği en büyük yalanı...
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .single-sentence {
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+            .single-sentence a {
+                color: #333;
+                font-size: 18px;
+                text-decoration: none;
+                transition: color 0.3s ease, transform 0.2s ease;
+                display: inline-block;
+                position: relative;
+            }
+
+                .single-sentence a:hover {
+                    color: #fc5404;
+                    transform: scale(1.1); /* Örneğin tıklanabilirlik hissiyatı için büyüme animasyonu */
+                }            
+
+        .modal-body {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
 </body>

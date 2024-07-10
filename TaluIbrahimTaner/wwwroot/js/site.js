@@ -1,8 +1,4 @@
-﻿
-/**
-   * Preloader
-   */
-const preloader = document.querySelector('#preloader');
+﻿const preloader = document.querySelector('#preloader');
 if (preloader) {
     window.addEventListener('load', () => {
         setTimeout(() => {
@@ -10,8 +6,10 @@ if (preloader) {
         }, 1000);
         setTimeout(() => {
             preloader.remove();
-            document.getElementById('content').style.display = 'block';
+            const contentElement = document.getElementById('content');
+            if (contentElement) {
+                contentElement.style.display = 'block';
+            }
         }, 2000);
     });
 }
-
