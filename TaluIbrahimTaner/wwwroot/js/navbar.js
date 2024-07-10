@@ -75,12 +75,6 @@
 			})
 
 			if (!isClickInside && !mt) {
-				if ( document.body.classList.contains('offcanvas-menu') ) {
-					document.body.classList.remove('offcanvas-menu');
-					mtoggleTemp.classList.remove('active');
-				}
-			}
-
 		});
 
 	}; 
