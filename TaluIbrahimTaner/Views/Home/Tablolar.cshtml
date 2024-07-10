@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Tablolar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
@@ -49,9 +49,39 @@
 
     /* Content */
     .content {
-        background-color: white;
-        padding: 10px;
+        position: relative;
+        background-color: #fff;
+        padding: 0;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
     }
+
+        .content img {
+            width: 100%;
+            display: block;
+        }
+
+        .content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Inner frame effect */
+        .content::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-sizing: border-box;
+            border-radius: 8px;
+            pointer-events: none;
+        }
 
     /* The "show" class is added to the filtered elements */
     .show {
@@ -65,6 +95,9 @@
         padding: 12px 16px;
         background-color: white;
         cursor: pointer;
+        border-radius: 5px;
+        margin: 5px;
+        transition: background-color 0.3s, color 0.3s;
     }
 
         /* Add a grey background color on mouse-over */
@@ -79,9 +112,9 @@
         }
 </style>
 <body class="bg-black">
-    <h2>PORTFOLIO</h2>
+    <h2 class="text-white">PORTFOLIO</h2>
     <div class="d-flex justify-content-center mt-lg-5 mt-sm-5" id="myBtnContainer">
-        <button class="btn btn-sm fotografi-buton mt-lg-5 mt-sm-5" onclick="filterSelection('00')">TABLOLARIM</button>
+        <button class="btn btn-sm fotografi-buton mt-lg-5 mt-sm-5">TABLOLARIM</button>
     </div>
     <!-- Portfolio Gallery Grid -->
     @* 00 *@

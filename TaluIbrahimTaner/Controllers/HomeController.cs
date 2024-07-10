@@ -17,7 +17,7 @@ namespace TaluIbrahimTaner.Controllers
         {
             return View();
         }
-        public IActionResult About()
+        public IActionResult Tablolar()
         {
             return View();
         }
@@ -54,6 +54,10 @@ namespace TaluIbrahimTaner.Controllers
             return View();
         }
         public IActionResult Yazilar()
+        {
+            return View();
+        }
+        public IActionResult Yazi1()
         {
             return View();
         }
