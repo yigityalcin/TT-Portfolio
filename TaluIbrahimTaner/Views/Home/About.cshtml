@@ -2,239 +2,277 @@
     ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body>
-    <div class="hero-2 overlay" style="background-image: url('images/img_3.jpg');">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mx-auto ">
-                    <h1 class="mb-5 text-center"><span>About Us</span></h1>
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
+    body {
+        background-color: #f1f1f1;
+        padding: 20px;
+    }
 
-                    <div class="intro-desc text-left">
-                        <div class="line"></div>
-                        <p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque.</p>
-                    </div>
-                </div>
+    /* Center website */
+    .main {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        word-break: break-all;
+    }
+
+    .row {
+        margin: 8px -16px;
+    }
+
+        /* Add padding BETWEEN each column (if you want) */
+        .row,
+        .row > .column {
+            padding: 8px;
+        }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        display: none; /* Hide columns by default */
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Content */
+    .content {
+        background-color: white;
+        padding: 10px;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+        display: block;
+    }
+
+    /* Style the buttons */
+    .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+        /* Add a grey background color on mouse-over */
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        /* Add a dark background color to the active button */
+        .btn.active {
+            background-color: #666;
+            color: white;
+        }
+</style>
+<body class="bg-black">
+    <h2>PORTFOLIO</h2>
+    <div class="d-flex justify-content-center mt-lg-5 mt-sm-5" id="myBtnContainer">
+        <button class="btn btn-sm fotografi-buton mt-lg-5 mt-sm-5" onclick="filterSelection('00')">TABLOLARIM</button>
+    </div>
+    <!-- Portfolio Gallery Grid -->
+    @* 00 *@
+    <div class="row">
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/1.jpg" alt="Mountains" style="width:100%">
             </div>
         </div>
-    </div>
-
-
-    <div class="section sec-4">
-        <div class="container">
-            <div class="row border-bottom mb-5 pb-5 justify-content-between">
-                <div class="col-lg-4 align-self-center mb-5">
-                    <h2 class="heading mb-4">We create architectural designs</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-                <div class="col-lg-7">
-                    <a href="https://www.youtube.com/watch?v=mwtbEGNABWU" class="video-wrap glightbox">
-                        <span class="icon-play"></span>
-                        <img src="images/img_7.jpg" alt="Image" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
-
-                    <div class="d-flex custom-card">
-                        <div class="img">
-                            <i class="flaticon-compass"></i>
-                        </div>
-                        <div class="text">
-                            <h3 class="h6 fw-bold text-black">We provide best services</h3>
-                            <p class="text-black-50">Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium.</p>
-                            <p>
-                                <a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex custom-card">
-                        <div class="img">
-                            <i class="flaticon-plan"></i>
-                        </div>
-                        <div class="text">
-                            <h3 class="h6 fw-bold text-black">We provide best services</h3>
-                            <p class="text-black-50">Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium.</p>
-                            <p>
-                                <a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex custom-card">
-                        <div class="img">
-                            <i class="flaticon-architect"></i>
-                        </div>
-                        <div class="text">
-                            <h3 class="h6 fw-bold text-black">We provide best services</h3>
-                            <p class="text-black-50">Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium.</p>
-                            <p>
-                                <a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/2.jpg" alt="Mountains" style="width:100%">
             </div>
         </div>
-    </div>
-
-
-    <div class="section sec-team sec-4 pb-5">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-6 mx-auto text-center">
-                    <h2 class="heading">We Are The Team</h2>
-                </div>
-
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/4.jpg" alt="Mountains" style="width:100%">
             </div>
-            <div class="row g-5">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    <div class="person">
-                        <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle mx-auto w-50 mb-3">
-                        <h3 class="mb-1">Jayson Campbell</h3>
-                        <span class="d-block text-black-50 mb-3">CEO, Partner</span>
-                        <p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <ul class="social-2 list-unstyled mb-5">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="https://twitter.com/talutaner"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    <div class="person">
-                        <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle mx-auto w-50 mb-3">
-                        <h3 class="mb-1">Jayson Campbell</h3>
-                        <span class="d-block text-black-50 mb-3">CEO, Partner</span>
-                        <p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <ul class="social-2 list-unstyled mb-5">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="https://twitter.com/talutaner"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    <div class="person">
-                        <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle mx-auto w-50 mb-3">
-                        <h3 class="mb-1">Jayson Campbell</h3>
-                        <span class="d-block text-black-50 mb-3">CEO, Partner</span>
-                        <p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <ul class="social-2 list-unstyled mb-5">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="https://twitter.com/talutaner"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                    <div class="person">
-                        <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle mx-auto w-50 mb-3">
-                        <h3 class="mb-1">Jayson Campbell</h3>
-                        <span class="d-block text-black-50 mb-3">CEO, Partner</span>
-                        <p class="text-black-50">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <ul class="social-2 list-unstyled mb-5">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="https://twitter.com/talutaner"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-
-
-
-
-    <div class="site-footer bg-light">
-        <div class="container">
-
-            <div class="row justify-content-between">
-                <div class="col-lg-4">
-                    <div class="widget">
-                        <h3 class="line-top">About</h3>
-                        <p class="mb-5">Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio dicta placeat! Et pariatur doloremque ea veniam. Separated they live.</p>
-
-                    </div>
-                    <div class="widget">
-                        <h3 class="line-top">Connect with us</h3>
-                        <ul class="social list-unstyled mb-5">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="https://twitter.com/talutaner"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-dribbble"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="widget">
-                                <h3 class="line-top">Navigations</h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-4">
-                            <div class="widget">
-                                <ul class="links list-unstyled">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Work</a></li>
-                                    <li><a href="#">Process</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-4">
-                            <div class="widget">
-                                <ul class="links list-unstyled">
-                                    <li><a href="#">Press</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="#">Support</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-4">
-                            <div class="widget">
-                                <ul class="links list-unstyled">
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Process</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/7.jpg" alt="Mountains" style="width:100%">
             </div>
-
-            <div class="row justify-content-center text-center copyright">
-                <div class="col-md-8">
-                    <p class="small text-black-50">
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>
-                        </br>Distributed By <a href="https://themewagon.com/">Themewagon</a> <!-- License information: https://untree.co/license/ -->
-                    </p>
-
-                </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/5.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/6.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/8.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/3.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/9.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/10.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/11.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/12.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/13.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/14.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>  
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/16.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/15.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/17.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/18.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/19.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/20.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/21.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/23.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/24.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/25.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/26.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/27.jpg" alt="Mountains" style="width:100%">
+            </div>
+        </div>
+        <div class="column 00">
+            <div class="content">
+                <img src="~/images/tablo/28.jpg" alt="Mountains" style="width:100%">
             </div>
         </div>
     </div>
 </body>
+<script>
+    filterSelection("all") // Execute the function and show all columns
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    // Show filtered elements
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+                element.className += " " + arr2[i];
+            }
+        }
+    }
+
+    // Hide elements that are not selected
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>
+
+
+

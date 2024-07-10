@@ -14395,3 +14395,10 @@ a {
         .arrow-down:hover {
             transform: translateY(5px); /* Hover durumunda aþaðýya doðru kaydýrma */
         }
+@media (max-width: 767.98px) {
+    .fotografi-buton {
+        padding: 3px 6px; /* Butonun iç dolgularýný daha da küçültmek için */
+        font-size: 10px; /* Yazý boyutunu daha da küçültmek için */
+        margin-top: 20px; /* Üst boþluðu ayarlamak için */
+    }
+}
