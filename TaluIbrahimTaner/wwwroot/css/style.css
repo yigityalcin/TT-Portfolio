@@ -14402,3 +14402,10 @@ a {
         margin-top: 20px; /* Üst boþluðu ayarlamak için */
     }
 }
+
+@media (max-width: 768px) { /* Mobil cihazlar için max geniþlik */
+    canvas {
+        max-width: none; /* Maksimum geniþlik sýnýrlamasýný kaldýr */
+        width: 100%; /* Mobil cihazlarda tam geniþlik */
+    }
+}

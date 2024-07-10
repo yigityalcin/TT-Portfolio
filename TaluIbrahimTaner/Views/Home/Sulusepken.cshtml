@@ -3,67 +3,123 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-    .logo {
-        color: black !important;
+    .pdf-controls {
+        text-align: center;
+        margin-bottom: 20px;
     }
 
-    .site-nav .site-navigation .site-menu > li.active > a {
-        color: #000;
-    }
+        .pdf-controls button {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0 5px;
+        }
 
-    .site-nav .site-navigation .site-menu > li > a {
-        color: #000;
-    }
-    .sosyal{
-        color: #000;
-    }
-
-    .has-children:hover > a {
-        color: #fc5404 !important; /* İçerikler menüsünün üzerine gelindiğinde metin rengi kırmızı olacak */
-    }
+            .pdf-controls button:hover {
+                background-color: #fff;
+                color: #000;
+            }
 
     #pdf-container {
-        width:100%;
+        width: 100%;
         max-width: 900px;
-        height: auto; /* Yükseklik otomatik olarak ayarlanacak */
-        margin: 150px auto; /* Sayfanın ortasında ve biraz aşağıda olacak */
+        margin: 100px auto; /* Sayfanın ortasında ve biraz aşağıda olacak */
     }
 
-        
+    canvas {
+        display: block;
+        margin-top:123px !important;
+        margin: 0 auto; /* Canvas'ı ortala */
+        max-width: 50%; /* Canvas'ın maksimum genişliği */
+        border: 1px solid black; /* Çerçeve kenarları */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Gölgelendirme */
+    }
 
-
-</style>
-<body>
-    <div id="pdf-container" class="shadow-sm"></div>
     
+</style>
+
+<body class="bg-black">
+    <div id="pdf-container" class="shadow-sm"></div>
+    <div class="pdf-controls">
+        <button id="prev-page">Previous Page</button>
+        <button id="next-page">Next Page</button>
+        <span>Page: <span id="page-num"></span> / <span id="page-count"></span></span>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
 
     <script>
-        // PDF dosyası yolu
-        const pdfPath = '/images/Sulusepken/Sulusepken.pdf'; // Mutlak URL veya yolu
+        const url = '/images/Sulusepken/Sulusepken.pdf';
+        let pdfDoc = null,
+            pageNum = 1,
+            pageRendering = false,
+            pageNumPending = null,
+            scale = 1.0, // Örnek olarak 1.0 (orijinal boyut)
+            canvas = document.createElement('canvas'),
+            ctx = canvas.getContext('2d');
 
-        // PDF.js kullanarak PDF dosyasını gösterme
-        pdfjsLib.getDocument(pdfPath).promise.then(pdf => {
-            for (let i = 1; i <= pdf.numPages; i++) {
-                pdf.getPage(i).then(page => {
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    const viewport = page.getViewport({ scale: 1.6 });
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+        document.getElementById('pdf-container').appendChild(canvas);
 
-                    // Sayfayı çiz
-                    page.render({
-                        canvasContext: context,
-                        viewport: viewport
-                    });
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(page => {
+                const viewport = page.getViewport({ scale: scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
 
-                    // PDF container içine ekle
-                    document.getElementById('pdf-container').appendChild(canvas);
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+
+                renderTask.promise.then(() => {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
                 });
+            });
+
+            document.getElementById('page-num').textContent = num;
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
             }
+        }
+
+        function onPrevPage() {
+            if (pageNum <= 1) {
+                return;
+            }
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) {
+                return;
+            }
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+
+        pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            document.getElementById('page-count').textContent = pdfDoc.numPages;
+            renderPage(pageNum);
         });
+
+        document.getElementById('prev-page').addEventListener('click', onPrevPage);
+        document.getElementById('next-page').addEventListener('click', onNextPage);
     </script>
-
 </body>
-
