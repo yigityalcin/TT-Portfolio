@@ -14394,17 +14394,31 @@ a {
         .arrow-down:hover {
             transform: translateY(5px); /* Hover durumunda aþaðýya doðru kaydýrma */
         }
+
+        /*MOBÝL ÝÇÝN MAX 768 PIXEL*/
 @media (max-width: 767.98px) {
     .fotografi-buton {
         padding: 3px 6px; /* Butonun iç dolgularýný daha da küçültmek için */
         font-size: 10px; /* Yazý boyutunu daha da küçültmek için */
         margin-top: 20px; /* Üst boþluðu ayarlamak için */
     }
+
+    canvas {
+        max-width: 80% !important; /* Canvas'ýn maksimum geniþliði */
+    }
+
+    #pdf-container {
+        height: auto; /* Otomatik yükseklik ayarý */
+        overflow-x: auto; /* Yatay kaydýrmayý etkinleþtir */
+    }
+
+    pre {
+        font-size: 12px; /* Ön biçimli metin boyutunu küçült */
+    }
 }
 
-@media (max-width: 768px) { /* Mobil cihazlar için max geniþlik */
+@media (min-width: 767.98px) {
     canvas {
-        max-width: none; /* Maksimum geniþlik sýnýrlamasýný kaldýr */
-        width: 100%; /* Mobil cihazlarda tam geniþlik */
+        margin-top: 123px !important;
     }
 }
